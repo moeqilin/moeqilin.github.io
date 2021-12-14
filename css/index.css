@@ -1528,38 +1528,141 @@ img:not([src]) {
   text-decoration: none !important;
 }
 :root {
-  --hl-color: #90a4ae;
-  --hl-bg: #f6f8fa;
-  --hltools-bg: #e6ebf1;
-  --hltools-color: #90a4ae;
-  --hlnumber-bg: #f6f8fa;
-  --hlnumber-color: rgba(144,164,174,0.5);
-  --hlscrollbar-bg: #dce4eb;
-  --hlexpand-bg: linear-gradient(180deg, rgba(246,248,250,0.6), rgba(246,248,250,0.9));
+  --hl-color: #eff;
+  --hl-bg: #212121;
+  --hltools-bg: #1c1c1c;
+  --hltools-color: rgba(238,255,255,0.8);
+  --hlnumber-bg: #212121;
+  --hlnumber-color: rgba(238,255,255,0.5);
+  --hlscrollbar-bg: #353535;
+  --hlexpand-bg: linear-gradient(180deg, rgba(33,33,33,0.6), rgba(33,33,33,0.9));
 }
-#article-container figure.highlight .line.marked {
-  background-color: rgba(128,203,196,0.251);
+#article-container pre[class*='language-'].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+  line-height: 1.6;
 }
-#article-container figure.highlight table {
+#article-container pre[class*='language-'].line-numbers > code {
+  position: relative;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+#article-container pre[class*='language-'].line-numbers .line-numbers-rows {
+  position: absolute;
+  top: 0;
+  left: -3.8em;
+  width: 3em;
+  letter-spacing: -1px;
+  font-size: 100%;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#article-container pre[class*='language-'].line-numbers .line-numbers-rows > span {
   display: block;
-  overflow: auto;
-  border: none;
+  counter-increment: linenumber;
+  pointer-events: none;
 }
-#article-container figure.highlight table td {
-  padding: 0;
-  border: none;
-}
-#article-container figure.highlight .gutter pre {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
-  background-color: var(--hlnumber-bg);
+#article-container pre[class*='language-'].line-numbers .line-numbers-rows > span:before {
+  display: block;
+  padding-right: 0.8em;
   color: var(--hlnumber-color);
+  content: counter(linenumber);
   text-align: right;
 }
-#article-container figure.highlight .code pre {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
-  width: 100%;
+pre[class*='language-'] .token.comment,
+pre[class*='language-'] .token.prolog,
+pre[class*='language-'] .token.doctype,
+pre[class*='language-'] .token.cdata {
+  color: #7c7c7c;
+}
+pre[class*='language-'] .token.punctuation {
+  color: #c5c8c6;
+}
+pre[class*='language-'] .namespace {
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+}
+pre[class*='language-'] .token.property,
+pre[class*='language-'] .token.keyword,
+pre[class*='language-'] .token.tag {
+  color: #96cbfe;
+}
+pre[class*='language-'] .token.class-name {
+  color: #ffffb6;
+}
+pre[class*='language-'] .token.boolean,
+pre[class*='language-'] .token.constant {
+  color: #9c9;
+}
+pre[class*='language-'] .token.symbol,
+pre[class*='language-'] .token.deleted {
+  color: #f92672;
+}
+pre[class*='language-'] .token.number {
+  color: #ff73fd;
+}
+pre[class*='language-'] .token.selector,
+pre[class*='language-'] .token.attr-name,
+pre[class*='language-'] .token.string,
+pre[class*='language-'] .token.char,
+pre[class*='language-'] .token.builtin,
+pre[class*='language-'] .token.inserted {
+  color: #a8ff60;
+}
+pre[class*='language-'] .token.variable {
+  color: #c6c5fe;
+}
+pre[class*='language-'] .token.operator {
+  color: #ededed;
+}
+pre[class*='language-'] .token.entity {
+  color: #ffffb6;
+  cursor: help;
+}
+pre[class*='language-'] .token.url {
+  color: #96cbfe;
+}
+pre[class*='language-'] .language-css .token.string,
+pre[class*='language-'] .style .token.string {
+  color: #87c38a;
+}
+pre[class*='language-'] .token.atrule,
+pre[class*='language-'] .token.attr-value {
+  color: #f9ee98;
+}
+pre[class*='language-'] .token.function {
+  color: #dad085;
+}
+pre[class*='language-'] .token.regex {
+  color: #e9c062;
+}
+pre[class*='language-'] .token.important {
+  color: #fd971f;
+}
+pre[class*='language-'] .token.important,
+pre[class*='language-'] .token.bold {
+  font-weight: bold;
+}
+pre[class*='language-'] .token.italic {
+  font-style: italic;
+}
+#article-container pre[class*='language-']::-webkit-scrollbar-thumb {
+  background: var(--hlscrollbar-bg);
+}
+#article-container pre[class*='language-']:not(.line-numbers) {
+  padding: 10px 20px;
+}
+#article-container pre[class*='language-'] .caption {
+  margin-left: -3.8em;
+  padding: 0.2rem 0.8rem !important;
+}
+#article-container pre[class*='language-'] .caption a {
+  padding: 0 !important;
 }
 #article-container pre,
 #article-container figure.highlight {
