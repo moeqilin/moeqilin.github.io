@@ -53,7 +53,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2021-12-17 14:08:27'
+  postUpdate: '2021-12-17 16:04:04'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -205,7 +205,7 @@ Page-1（Basic Challenges ）Less - 1
 ?id&#x3D;-1&#39; order by 3 --+
 
 2、查看数据库基本信息：
-?id&#x3D;-1&#39; union select 1,group_concat(database(),versi ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/FxckTheUpload-Labs.html" title="Fxck The Sqli-Labs">Fxck The Sqli-Labs</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-13T10:32:20.000Z" title="发表于 2021-12-13 18:32:20">2021-12-13</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-17T06:08:14.590Z" title="更新于 2021-12-17 14:08:14">2021-12-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Upload/">Upload</a></span></div><div class="content">
+?id&#x3D;-1&#39; union select 1,group_concat(database(),versi ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/Fxck%20The%20Upload-Labs.html" title="Fxck The Upload-Labs">Fxck The Upload-Labs</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-13T10:32:20.000Z" title="发表于 2021-12-13 18:32:20">2021-12-13</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-17T08:03:43.610Z" title="更新于 2021-12-17 16:03:43">2021-12-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Web/">Web</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Upload/">Upload</a></span></div><div class="content">
 实验环境：
 
 https://github.com/c0ny1/upload-labs
@@ -218,9 +218,11 @@ Pass-01
 代码解析
 
 JAVASCRIPTJAVASCRIPTfunction checkFile() &#123;
-    var file &#x3D; document.getElementsByName(&#39;upload_file&#39;)[0].value;
-    if (file &#x3D;&#x3D; null || file &#x3D;&#x3D; &quot;&quot;) &#123;
-        alert(&quo ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/Py2andPy3InstalledForWindows.html" title="Windows同时安装python2和python3">Windows同时安装python2和python3</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-08T14:45:13.000Z" title="发表于 2021-12-08 22:45:13">2021-12-08</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-13T04:51:09.991Z" title="更新于 2021-12-13 12:51:09">2021-12-13</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Build/">Build</a></span></div><div class="content">使用python开发时，环境有python2和python3两种，为了满足不同版本需求，我们可以在Windows上搭建类似于kali下两版本共存的生产环境。
+    var file = document.getElementsByName('upload_file')[0].value;
+    if (file == null || file == "") &#123;
+        alert("请选择要上传的文件!");
+        return false;
+    &#125; ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/Py2andPy3InstalledForWindows.html" title="Windows同时安装python2和python3">Windows同时安装python2和python3</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-08T14:45:13.000Z" title="发表于 2021-12-08 22:45:13">2021-12-08</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-13T04:51:09.991Z" title="更新于 2021-12-13 12:51:09">2021-12-13</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Build/">Build</a></span></div><div class="content">使用python开发时，环境有python2和python3两种，为了满足不同版本需求，我们可以在Windows上搭建类似于kali下两版本共存的生产环境。
 1、下载在官网下载两个不同版本的python安装程序
 python3是后缀为exe的可执行文件
 python2是后缀为mis的安装程序
